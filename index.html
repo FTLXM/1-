@@ -1,185 +1,181 @@
-<！doctype 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言 超文本标记语言>
-<超文本标记语言 朗="zh-CN">
-<头>
-    <元 字符集="UTF-8">
-    <元 姓名="视口" 内容="宽度=设备宽度，初始比例=1.0">
-    <标题>测测你的灵魂底色是什么石头</标题>
-    <脚本 src="https://cdn.tailwindcss.com"></脚本>
-    <链接 href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="样式表">
-    <脚本>
-        顺风.配置 = {
-            主题: {
-延伸：{
-颜色：{
-                        石头: {
-                            黑暗的: '#374151',
-                            中间的: '#6B7280',
-光：'#9CA3AF'
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测测你的灵魂底色是什么石头</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: {
+                            dark: '#374151',
+                            mid: '#6B7280',
+                            light: '#9CA3AF'
                         },
-森林：{
-                            深的: '#2F5233',
-                            中间的: '#4A7C59',
-光：'#86a873'
+                        forest: {
+                            deep: '#2F5233',
+                            mid: '#4A7C59',
+                            light: '#86A873'
                         },
-金：'#D4AF7A'，
-                        奶油: '#F5F2EB',
-                        温暖的: '#E9E5DC'
+                        gold: '#D4AF7A',
+                        cream: '#F5F2EB',
+                        warm: '#E9E5DC'
                     },
-fontFamily：{
-                        衬线: ['无衬线sc', '衬线'],
-没有: ['NOTO 没有 sc', '无线'],
+                    fontFamily: {
+                        serif: ['Noto Serif SC', 'serif'],
+                        sans: ['Noto Sans SC', 'sans-serif'],
                     },
-动画：{
-                        '淡入': '淡入0.6秒缓出',
-                        '上滑': '上滑0.7秒缓出',
-"浮动": "浮点4s轻松进出无限",
-'微光'：'微光3s宽松进出无限'，
-"发光": "发光3s宽松进出无限",
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.7s ease-out',
+                        'float': 'float 4s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite',
                     },
-关键帧：{
-                        淡入: {
-'0%'：{不透明度：'0'}，
-'100%'：{不透明度：'1'}，
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
                         },
-上滑：{
-                            '0%': { 不透明度: '0', 改变: 'translateY(40px)' },
-'100%'：{不透明度：'1'，修改：'translateY(0)'}，
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
                         },
-漂浮：{
-                            '0%, 100%': { 改变: 'translateY(0)' },
-                            '50%': { 改变: 'translateY(-10px)' },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
                         },
-                        微光: {
-'0%，100%'：{不透明度：'0.5'}，
-'50%'：{不透明度：'1'}，
+                        shimmer: {
+                            '0%, 100%': { opacity: '0.5' },
+                            '50%': { opacity: '1' },
                         },
-                        发出微弱的光: {
-                            '0%, 100%': { 箱形阴影: '0020px rgba(74，124，89，0.2)' },
-                            '50%': { 箱形阴影: '0035px rgba(74，124，89，0.4)' },
+                        glow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(74, 124, 89, 0.2)' },
+                            '50%': { boxShadow: '0 0 35px rgba(74, 124, 89, 0.4)' },
                         }
                     }
                 }
             }
         }
-    </脚本>
-    <风格 类型="text/tailwindcss">
-@layer 实用程序{
-文字黄金渐变
-背景：线性梯度(135度，#F5E6C80%，#D4AF7A50%，#A67C3E100%)；
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gold-gradient {
+                background: linear-gradient(135deg, #F5E6C8 0%, #D4AF7A 50%, #A67C3E 100%);
                 -webkit-background-clip: text;
--webkit-text-fill-color：透明；
-背景剪辑：文本；
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
             }
-.bg-石卡{
-背景：线性梯度(145°，rgba(255,255,255,0.95)0%，rgba(245,242,235,0.9)100%)；
-背景滤镜：模糊(10px)；
+            .bg-stone-card {
+                background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(245,242,235,0.9) 100%);
+                backdrop-filter: blur(10px);
             }
-没有任何的.
-背景：线性梯度(160度，#2F52330%，#3D6B4250%，#4A7C59100%)；
+            .bg-forest-header {
+                background: linear-gradient(160deg, #2F5233 0%, #3D6B42 50%, #4A7C59 100%);
             }
             .option-hover {
-过渡：均为0.35s立方比塞尔(0.4，0，0.2，1)；
+                transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             }
             .option-hover:hover {
-转换：翻译X(6px)；
-border-color:rgba(74，124，89，0.4)；
-盒阴影：08px25px-5pxrgba(47，82，51，0.15)；
+                transform: translateX(6px);
+                border-color: rgba(74, 124, 89, 0.4);
+                box-shadow: 0 8px 25px -5px rgba(47, 82, 51, 0.15);
             }
-.progress-stone{
-背景：线性梯度(90度，#4A7C59，#D4AF7A，#86A873)；
-背景尺寸：200%100%；
-动画：stoneFlow2.5s线性无限；
+            .progress-stone {
+                background: linear-gradient(90deg, #4A7C59, #D4AF7A, #86A873);
+                background-size: 200% 100%;
+                animation: stoneFlow 2.5s linear infinite;
             }
-现在我们要做的是
-0%{后台位置：0%50%；}
-100%{背景位置：200%50%；}
+            @keyframes stoneFlow {
+                0% { background-position: 0% 50%; }
+                100% { background-position: 200% 50%; }
             }
-.stone-border{
-位置：相对；
+            .stone-border {
+                position: relative;
             }
-.stone边框：：{之前
-内容：“”；
-位置：绝对；
-昆虫：-2px；
+            .stone-border::before {
+                content: '';
+                position: absolute;
+                inset: -2px;
                 border-radius: 1.5rem;
-背景：线性梯度(135度，#D4AF7A，#4A7C59，#D4AF7A)；
-Z指数：-1；
-不透明度：0.5；
+                background: linear-gradient(135deg, #D4AF7A, #4A7C59, #D4AF7A);
+                z-index: -1;
+                opacity: 0.5;
                 filter: blur(6px);
-动画：微光3s轻松进出无限；
+                animation: shimmer 3s ease-in-out infinite;
             }
         }
-    </风格>
-</头>
-<身体 班级="min-h-screen bg-gradient-to-br from-stone-100 via-green-50to-stone-50 font-sans">
-        <身体 班级="min-h-screen bg-gradient-to-br from-stone-100 via-green-50to-stone-50 font-sans">
-  <其他 风格="文本对齐：居中；上边距：20px；下边距：20px；位置：相对；z索引：9999；">
-    <IMG src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fftlxm.github.io%2F1-%2F&标签=&图标=github&颜色=%23198754&消息=&style=flat&TZ=UTC" alt="命中">
-  </其他>
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-stone-100 via-green-50 to-stone-50 font-sans">
     <!-- 背景装饰 -->
-    <其他 班级="固定插入-0溢出隐藏指针事件无">
-        <其他 班级="绝对top-10right-0W-80H-80bg-forest-mid/10ound-full blur-3xl"></其他>
-        <其他 班级="绝对底部-20左-0 w-96h-96bg-stone-mid/10圆-全模糊-3xl"></其他>
-        <其他 班级="绝对顶部-1/2左-1/2-平移-x-1/2-平移-y-1/2w-[500px]h-[500px]bg-黄金/5圆整模糊-3xl"></其他>
-    </其他>
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-10 right-0 w-80 h-80 bg-forest-mid/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-0 w-96 h-96 bg-stone-mid/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/5 rounded-full blur-3xl"></div>
+    </div>
 
-    <其他 班级="相对Z-10min-h-屏幕柔性伸缩-Col项目-中心对齐-中心px-4PY-8">
-        <! -- 首页 -->
-        <其他 身份标识="主页" 班级="w-full max-w-lg动画淡入">
-            <其他 班级="文本居中mb-8">
-                <其他 班级="内联块MB-6动画浮点">
-                    <其他 班级="w-24H-24mx-自动圆角-2xl bg-森林-头部弹性项目-中心对齐-中心阴影-2xl阴影-森林-深度/30动画-辉光">
-                        <SVG 班级="W-12h-12文本-金色" 填满="无" 中风="当前颜色" 检视方块="0 0 24 24">
-                            <路径 行程-线帽="圆形" stroke-linejoin="圆形" 笔划宽度="1.5" d="M12 3l1.9 5.7H20l-4.7 3.4 1.8 5.6L12 14.8 6.9 17.7l1.8-5.6L4 8.7h6.1L12 3z"></路径>
-                        </SVG>
-                    </其他>
-                </其他>
-                <h1 班级="text-[clamp(1.8rem，5vw，2.5rem)]font-serif font-nack text-stone-dark MB-3 leading-tight">
-                    测测你的灵魂底色<溴><跨度 班级="文本-黄金-梯度">是什么石头</跨度>
+    <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-8">
+        <!-- 首页 -->
+        <div id="homePage" class="w-full max-w-lg animate-fade-in">
+            <div class="text-center mb-8">
+                <div class="inline-block mb-6 animate-float">
+                    <div class="w-24 h-24 mx-auto rounded-2xl bg-forest-header flex items-center justify-center shadow-2xl shadow-forest-deep/30 animate-glow">
+                        <svg class="w-12 h-12 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3l1.9 5.7H20l-4.7 3.4 1.8 5.6L12 14.8 6.9 17.7l1.8-5.6L4 8.7h6.1L12 3z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h1 class="text-[clamp(1.8rem,5vw,2.5rem)] font-serif font-black text-stone-dark mb-3 leading-tight">
+                    测测你的灵魂底色<br><span class="text-gold-gradient">是什么石头</span>
                 </h1>
-                <p 班级="text-stone-mid text-lg mb-8">20道题 · 鉴定你的专属灵魂石种</p>
-            </其他>
+                <p class="text-stone-mid text-lg mb-8">20道题 · 鉴定你的专属灵魂石种</p>
+            </div>
 
-            <其他 班级="bg-stone-card圆形-3xl P-8阴影-xl阴影-stone-200/50边框-白色/60mb-6">
-                <其他 班级="space-y-5mb-8">
-                    <其他 班级="弹性项目-中心间隙-4">
-                        <其他 班级="W-10H-10圆形-xl bg-森林-深度/10弹性项目-中心对齐-中心弹性-收缩-0">
-                            <跨度 班级="文本-林-深字体-衬线字体-粗体">1</跨度>
-                        </其他>
-                        <跨度 班级="text-stone-600">从日常习惯透视灵魂质地</跨度>
-                    </其他>
-                    <其他 班级="弹性项目-中心间隙-4">
-                        <其他 班级="w-10 h-10 rounded-xl bg-gold/20 flex items-center justify-center flex-shrink-0">
-                            <span 班级="text-gold font-serif font-bold">2</span>
-                        </其他>
-                        <span 班级="text-stone-600">多维度分析矿石级人格特质</span>
-                    </其他>
-                    <其他 班级="flex items-center gap-4">
-                        <其他 班级="w-10 h-10 rounded-xl bg-stone-mid/10 flex items-center justify-center flex-shrink-0">
-                            <span 班级="text-stone-mid font-serif font-bold">3</span>
-                        </其他>
-                        <span 班级="text-stone-600">解锁隐藏款灵魂石种</span>
-                    </其他>
-                </其他>
+            <div class="bg-stone-card rounded-3xl p-8 shadow-xl shadow-stone-200/50 border border-white/60 mb-6">
+                <div class="space-y-5 mb-8">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-forest-deep/10 flex items-center justify-center flex-shrink-0">
+                            <span class="text-forest-deep font-serif font-bold">1</span>
+                        </div>
+                        <span class="text-stone-600">从日常习惯透视灵魂质地</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-gold/20 flex items-center justify-center flex-shrink-0">
+                            <span class="text-gold font-serif font-bold">2</span>
+                        </div>
+                        <span class="text-stone-600">多维度分析矿石级人格特质</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-stone-mid/10 flex items-center justify-center flex-shrink-0">
+                            <span class="text-stone-mid font-serif font-bold">3</span>
+                        </div>
+                        <span class="text-stone-600">解锁隐藏款灵魂石种</span>
+                    </div>
+                </div>
 
-                <button onclick="startTest()" 班级="w-full py-4 px-6 bg-forest-header text-white font-serif font-bold text-lg rounded-2xl shadow-lg shadow-forest-deep/30 hover:shadow-xl hover:shadow-forest-deep/40 transform hover:-translate-y-0.5 transition-all duration-300">
+                <button onclick="startTest()" class="w-full py-4 px-6 bg-forest-header text-white font-serif font-bold text-lg rounded-2xl shadow-lg shadow-forest-deep/30 hover:shadow-xl hover:shadow-forest-deep/40 transform hover:-translate-y-0.5 transition-all duration-300">
                     开始鉴定
                 </button>
-            </其他>
+            </div>
 
-            <p 班级="text-center text-stone-400 text-sm">· 趣味测试，仅供娱乐 ·</p>
-        </其他>
+            <p class="text-center text-stone-400 text-sm">· 趣味测试，仅供娱乐 ·</p>
+        </div>
 
         <!-- 答题页 -->
-        <其他 身份标识="quizPage" 班级="w-full max-w-lg hidden">
+        <div id="quizPage" class="w-full max-w-lg hidden">
             <!-- 进度条 -->
-            <其他 班级="mb-6">
-                <其他 班级="flex justify-between items-center mb-2">
-                    <span 班级="text-sm font-medium text-stone-600">第 <span 身份标识="currentNum">1</span> / 20 题</span>
-                    <span 身份标识="progressText" 班级="text-sm font-medium text-forest-deep">5%</span>
-                </其他>
-                <其他 班级="h-2 bg-stone-200 rounded-full overflow-hidden">
-                    <其他 身份标识="progressBar" 班级="h-full progress-stone rounded-full transition-all duration-500 ease-out" 风格="width: 5%"></其他>
+            <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-medium text-stone-600">第 <span id="currentNum">1</span> / 20 题</span>
+                    <span id="progressText" class="text-sm font-medium text-forest-deep">5%</span>
+                </div>
+                <div class="h-2 bg-stone-200 rounded-full overflow-hidden">
+                    <div id="progressBar" class="h-full progress-stone rounded-full transition-all duration-500 ease-out" style="width: 5%"></div>
                 </div>
             </div>
 
