@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测测你的灵魂底色是什么石头</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: {
+                            dark: '#374151',
+                            mid: '#6B7280',
+                            light: '#9CA3AF'
+                        },
+                        forest: {
+                            deep: '#2F5233',
+                            mid: '#4A7C59',
+                            light: '#86A873'
+                        },
+                        gold: '#D4AF7A',
+                        cream: '#F5F2EB',
+                        warm: '#E9E5DC'
+                    },
+                    fontFamily: {
+                        serif: ['Noto Serif SC', 'serif'],
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.7s ease-out',
+                        'float': 'float 4s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        shimmer: {
+                            '0%, 100%': { opacity: '0.5' },
+                            '50%': { opacity: '1' },
+                        },
+                        glow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(74, 124, 89, 0.2)' },
+                            '50%': { boxShadow: '0 0 35px rgba(74, 124, 89, 0.4)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gold-gradient {
+                background: linear-gradient(135deg, #F5E6C8 0%, #D4AF7A 50%, #A67C3E 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .bg-stone-card {
+                background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(245,242,235,0.9) 100%);
+                backdrop-filter: blur(10px);
+            }
+            .bg-forest-header {
+                background: linear-gradient(160deg, #2F5233 0%, #3D6B42 50%, #4A7C59 100%);
+            }
+            .option-hover {
+                transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .option-hover:hover {
+                transform: translateX(6px);
+                border-color: rgba(74, 124, 89, 0.4);
+                box-shadow: 0 8px 25px -5px rgba(47, 82, 51, 0.15);
+            }
+            .progress-stone {
+                background: linear-gradient(90deg, #4A7C59, #D4AF7A, #86A873);
+                background-size: 200% 100%;
+                animation: stoneFlow 2.5s linear infinite;
+            }
+            @keyframes stoneFlow {
+                0% { background-position: 0% 50%; }
+                100% { background-position: 200% 50%; }
+            }
+            .stone-border {
+                position: relative;
+            }
+            .stone-border::before {
+                content: '';
+                position: absolute;
+                inset: -2px;
+                border-radius: 1.5rem;
+                background: linear-gradient(135deg, #D4AF7A, #4A7C59, #D4AF7A);
+                z-index: -1;
+                opacity: 0.5;
+                filter: blur(6px);
+                animation: shimmer 3s ease-in-out infinite;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-stone-100 via-green-50 to-stone-50 font-sans">
+    <!-- 背景装饰 -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-10 right-0 w-80 h-80 bg-forest-mid/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-0 w-96 h-96 bg-stone-mid/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-8">
+        <!-- 首页 -->
+        <div id="homePage" class="w-full max-w-lg animate-fade-in">
+            <div class="text-center mb-8">
+                <div class="inline-block mb-6 animate-float">
+                    <div class="w-24 h-24 mx-auto rounded-2xl bg-forest-header flex items-center justify-center shadow-2xl shadow-forest-deep/30 animate-glow">
+                        <svg class="w-12 h-12 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3l1.9 5.7H20l-4.7 3.4 1.8 5.6L12 14.8 6.9 17.7l1.8-5.6L4 8.7h6.1L12 3z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h1 class="text-[clamp(1.8rem,5vw,2.5rem)] font-serif font-black text-stone-dark mb-3 leading-tight">
+                    测测你的灵魂底色<br><span class="text-gold-gradient">是什么石头</span>
+                </h1>
+                <p class="text-stone-mid text-lg mb-8">20道题 · 鉴定你的专属灵魂石种</p>
+            </div>
+
+            <div class="bg-stone-card rounded-3xl p-8 shadow-xl shadow-stone-200/50 border border-white/60 mb-6">
+                <div class="space-y-5 mb-8">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-forest-deep/10 flex items-center justify-center flex-shrink-0">
+                            <span class="text-forest-deep font-serif font-bold">1</span>
+                        </div>
+                        <span class="text-stone-600">从日常习惯透视灵魂质地</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-gold/20 flex items-center justify-center flex-shrink-0">
+                            <span class="text-gold font-serif font-bold">2</span>
+                        </div>
+                        <span class="text-stone-600">多维度分析矿石级人格特质</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-stone-mid/10 flex items-center justify-center flex-shrink-0">
+                            <span class="text-stone-mid font-serif font-bold">3</span>
+                        </div>
+                        <span class="text-stone-600">解锁隐藏款灵魂石种</span>
+                    </div>
+                </div>
+
+                <button onclick="startTest()" class="w-full py-4 px-6 bg-forest-header text-white font-serif font-bold text-lg rounded-2xl shadow-lg shadow-forest-deep/30 hover:shadow-xl hover:shadow-forest-deep/40 transform hover:-translate-y-0.5 transition-all duration-300">
+                    开始鉴定
+                </button>
+            </div>
+
+            <p class="text-center text-stone-400 text-sm">· 趣味测试，仅供娱乐 ·</p>
+        </div>
+
+        <!-- 答题页 -->
+        <div id="quizPage" class="w-full max-w-lg hidden">
+            <!-- 进度条 -->
+            <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-medium text-stone-600">第 <span id="currentNum">1</span> / 20 题</span>
+                    <span id="progressText" class="text-sm font-medium text-forest-deep">5%</span>
+                </div>
+                <div class="h-2 bg-stone-200 rounded-full overflow-hidden">
+                    <div id="progressBar" class="h-full progress-stone rounded-full transition-all duration-500 ease-out" style="width: 5%"></div>
+                </div>
+            </div>
+
+            <!-- 题目卡片 -->
+            <div class="bg-stone-card rounded-3xl p-8 shadow-xl shadow-stone-200/50 border border-white/60 min-h-[420px] flex flex-col">
+                <h2 id="questionText" class="text-xl font-serif font-bold text-stone-dark mb-6 leading-relaxed"></h2>
+                <div id="optionsContainer" class="space-y-3 flex-1"></div>
+            </div>
+        </div>
+
+        <!-- 加载页 -->
+        <div id="loadingPage" class="w-full max-w-lg hidden text-center">
+            <div class="bg-stone-card rounded-3xl p-12 shadow-xl shadow-stone-200/50 border border-white/60">
+                <div class="w-24 h-24 mx-auto mb-6 relative">
+                    <div class="absolute inset-0 rounded-full border-2 border-stone-200"></div>
+                    <div class="absolute inset-0 rounded-full border-2 border-transparent border-t-forest-deep animate-spin"></div>
+                    <div class="absolute inset-3 rounded-full border-2 border-transparent border-t-gold animate-spin" style="animation-direction: reverse; animation-duration: 1.8s;"></div>
+                    <div class="absolute inset-6 rounded-full border-2 border-transparent border-t-stone-mid animate-spin" style="animation-duration: 2.2s;"></div>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-dark mb-2">正在鉴定灵魂石种</h3>
+                <p id="loadingTip" class="text-stone-500">检测矿石成分与硬度...</p>
+            </div>
+        </div>
+
+        <!-- 结果页 -->
+        <div id="resultPage" class="w-full max-w-lg hidden animate-slide-up">
+            <div class="stone-border bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <!-- 结果头部 -->
+                <div class="bg-forest-header p-8 text-center relative overflow-hidden">
+                    <!-- 装饰光效 -->
+                    <div class="absolute top-6 right-10 w-20 h-20 bg-gold/20 rounded-full blur-2xl animate-shimmer"></div>
+                    <div class="absolute bottom-8 left-8 w-16 h-16 bg-forest-light/20 rounded-full blur-xl animate-shimmer" style="animation-delay: 1s;"></div>
+                    
+                    <div class="relative z-10">
+                        <p class="text-gold/80 text-sm mb-3 font-serif">✦ 灵魂石种鉴定报告 ✦</p>
+                        <h2 class="text-3xl font-serif font-black text-gold-gradient mb-2">讲 解 石</h2>
+                        <p class="text-cream/90">品种：<span class="text-gold font-medium">公园草坪隐藏款</span></p>
+                    </div>
+                </div>
+
+                <!-- 石头实拍图 -->
+                <div class="px-8 -mt-6 relative z-20">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl shadow-forest-deep/20 border-4 border-white">
+                        <!-- 请将图片与HTML文件放在同一目录下，命名为 jiangjieshi.jpg -->
+                        <img src="jiangjieshi.jpg" 
+                             alt="讲解石" 
+                             class="w-full h-auto object-cover">
+                    </div>
+                </div>
+
+                <!-- 结果内容 -->
+                <div class="p-8 space-y-6">
+                    <!-- 石种特质 -->
+                    <div>
+                        <h3 class="text-lg font-serif font-bold text-stone-dark mb-3 flex items-center gap-2">
+                            <span class="w-1 h-5 bg-gradient-to-b from-gold to-stone-mid rounded-full"></span>
+                            🪨 石种特质
+                        </h3>
+                        <p class="text-stone-600 leading-relaxed">
+                            青石质地，外表低调沉稳，正面自带天然蜂窝状扩音孔，共鸣能力拉满。看似普通的路边石头，实则天生自带外放buff，只要开口就能把声音清晰传到每个角落，是石界公认的「行走的讲解员」。
+                        </p>
+                    </div>
+
+                    <!-- 匹配理由 -->
+                    <div>
+                        <h3 class="text-lg font-serif font-bold text-stone-dark mb-3 flex items-center gap-2">
+                            <span class="w-1 h-5 bg-gradient-to-b from-forest-mid to-forest-deep rounded-full"></span>
+                            🎯 匹配理由
+                        </h3>
+                        <div class="space-y-2.5">
+                            <div class="flex items-start gap-3">
+                                <span class="text-gold mt-0.5">✦</span>
+                                <span class="text-stone-600">自带扩音属性，表达力天赋点满</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-gold mt-0.5">✦</span>
+                                <span class="text-stone-600">逻辑清晰，再复杂的内容都能捋顺</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-gold mt-0.5">✦</span>
+                                <span class="text-stone-600">外表沉稳，开口自带说服力</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 隐藏天赋 -->
+                    <div>
+                        <h3 class="text-lg font-serif font-bold text-stone-dark mb-3 flex items-center gap-2">
+                            <span class="w-1 h-5 bg-gradient-to-b from-gold to-forest-mid rounded-full"></span>
+                            ✨ 隐藏天赋
+                        </h3>
+                        <div class="bg-gradient-to-r from-gold/10 via-forest-mid/5 to-forest-light/10 rounded-2xl p-5 border border-white/50">
+                            <p class="text-stone-700 leading-relaxed">
+                                你拥有<span class="font-bold text-forest-deep">「润物细无声」</span>的稀有讲解能力。别人讲得声嘶力竭，你就像这颗草坪石一样，看似不起眼，却能把声音稳稳传到每个角落，让人不知不觉就听进去了。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 趣味彩蛋 -->
+                    <div>
+                        <h3 class="text-lg font-serif font-bold text-stone-dark mb-3 flex items-center gap-2">
+                            <span class="w-1 h-5 bg-gradient-to-b from-forest-mid to-stone-mid rounded-full"></span>
+                            🥚 趣味彩蛋
+                        </h3>
+                        <p class="text-stone-600 leading-relaxed">
+                            悄悄告诉你：全国各大公园的草坪里，都藏着你的同类。它们白天默默放广播讲解，晚上原地休息，主打一个专业讲解、全年无休。石头界的劳模，说的就是你🙈
+                        </p>
+                    </div>
+
+                    <!-- 专属文案 -->
+                    <div class="bg-stone-dark rounded-2xl p-6 text-center">
+                        <p class="text-gold/70 text-sm mb-2 font-serif">✧ 石头专属箴言 ✧</p>
+                        <p class="text-white font-serif font-bold text-lg leading-relaxed">
+                            "石头都长喇叭了，<br>你天生就是讲解人"
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 操作按钮 -->
+                <div class="px-8 pb-8 space-y-3">
+                    <button onclick="restartTest()" class="w-full py-4 px-6 bg-forest-header text-white font-serif font-bold rounded-2xl shadow-lg shadow-forest-deep/30 hover:shadow-xl hover:shadow-forest-deep/40 transform hover:-translate-y-0.5 transition-all duration-300">
+                        再鉴一次
+                    </button>
+                    <p class="text-center text-stone-400 text-xs">长按截图，晒晒你的专属灵魂石头</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 20道生活化题目
+        const questions = [
+            {
+                question: "周末休息时，你更倾向于？",
+                options: [
+                    { text: "宅在家里看书、刷纪录片充电", dimensions: { calm: 2, thinker: 1 } },
+                    { text: "约三五好友聚会聊天", dimensions: { social: 2, warm: 1 } },
+                    { text: "去探店、看展，探索新鲜事物", dimensions: { explorer: 2, creative: 1 } },
+                    { text: "在家研究新技能，捣鼓小爱好", dimensions: { builder: 2, calm: 1 } }
+                ]
+            },
+            {
+                question: "朋友遇到烦心事来找你，你通常会？",
+                options: [
+                    { text: "先共情安抚，再帮他理清楚思路", dimensions: { warm: 2, clarity: 1 } },
+                    { text: "直接给出解决方案和建议", dimensions: { firm: 2, clarity: 1 } },
+                    { text: "陪着一起吐槽，情绪价值拉满", dimensions: { warm: 2, social: 1 } },
+                    { text: "分享自己类似的经历和感悟", dimensions: { teacher: 2, warm: 1 } }
+                ]
+            },
+            {
+                question: "在陌生的社交场合，你通常是？",
+                options: [
+                    { text: "主动活跃气氛，带动大家聊天", dimensions: { social: 2, expressive: 1 } },
+                    { text: "和熟悉的人待在一起", dimensions: { calm: 1, warm: 1 } },
+                    { text: "默默观察周围的人和事", dimensions: { observer: 2, calm: 1 } },
+                    { text: "遇到聊得来的就会说很多", dimensions: { thinker: 1, expressive: 1 } }
+                ]
+            },
+            {
+                question: "做决定时，你更依赖？",
+                options: [
+                    { text: "逻辑分析和事实依据", dimensions: { clarity: 2, firm: 1 } },
+                    { text: "直觉和内心感受", dimensions: { warm: 2, creative: 1 } },
+                    { text: "过往经验和他人意见", dimensions: { firm: 1, warm: 1 } },
+                    { text: "快速权衡后立刻行动", dimensions: { explorer: 2, clarity: 1 } }
+                ]
+            },
+            {
+                question: "看到一篇很有道理的文章，你会？",
+                options: [
+                    { text: "收藏起来反复品读", dimensions: { calm: 1, thinker: 1 } },
+                    { text: "立刻转发分享给朋友", dimensions: { teacher: 2, social: 1 } },
+                    { text: "忍不住在评论区发表观点", dimensions: { expressive: 1, thinker: 1 } },
+                    { text: "整理成自己的理解记下来", dimensions: { builder: 2, clarity: 1 } }
+                ]
+            },
+            {
+                question: "工作/学习中，你更享受？",
+                options: [
+                    { text: "攻克难题，达成目标", dimensions: { firm: 2, explorer: 1 } },
+                    { text: "和团队协作共同进步", dimensions: { warm: 2, social: 1 } },
+                    { text: "把学到的东西分享给别人", dimensions: { teacher: 2, warm: 1 } },
+                    { text: "产出新想法，做创意工作", dimensions: { creative: 2, explorer: 1 } }
+                ]
+            },
+            {
+                question: "以下哪种赞美最让你开心？",
+                options: [
+                    { text: "你真的特别靠谱", dimensions: { firm: 2, calm: 1 } },
+                    { text: "和你相处特别舒服", dimensions: { warm: 2, social: 1 } },
+                    { text: "你讲得也太清楚了", dimensions: { teacher: 2, clarity: 1 } },
+                    { text: "你想法好有创意", dimensions: { creative: 2, explorer: 1 } }
+                ]
+            },
+            {
+                question: "压力大的时候，你会怎么解压？",
+                options: [
+                    { text: "找人倾诉，把情绪说出来", dimensions: { social: 2, warm: 1 } },
+                    { text: "自己独处，慢慢消化", dimensions: { calm: 2, thinker: 1 } },
+                    { text: "做别的事转移注意力", dimensions: { explorer: 2, creative: 1 } },
+                    { text: "分析压力来源并解决它", dimensions: { clarity: 2, firm: 1 } }
+                ]
+            },
+            {
+                question: "团队项目里，你常扮演的角色是？",
+                options: [
+                    { text: "统筹全局的组织者", dimensions: { firm: 2, leader: 1 } },
+                    { text: "出主意的创意担当", dimensions: { creative: 2, explorer: 1 } },
+                    { text: "协调关系的润滑剂", dimensions: { warm: 2, social: 1 } },
+                    { text: "分享经验的指导者", dimensions: { teacher: 2, warm: 1 } }
+                ]
+            },
+            {
+                question: "你对以下哪类内容最感兴趣？",
+                options: [
+                    { text: "科普知识、人文历史", dimensions: { clarity: 2, thinker: 1 } },
+                    { text: "情感故事、生活感悟", dimensions: { warm: 2, social: 1 } },
+                    { text: "技能教程、干货分享", dimensions: { builder: 2, teacher: 1 } },
+                    { text: "艺术设计、美学创作", dimensions: { creative: 2, explorer: 1 } }
+                ]
+            },
+            {
+                question: "别人向你请教问题时，你的第一反应是？",
+                options: [
+                    { text: "很开心，耐心讲明白", dimensions: { warm: 2, teacher: 1 } },
+                    { text: "有点紧张，怕讲不好", dimensions: { calm: 1, thinker: 1 } },
+                    { text: "直接告诉他怎么做", dimensions: { firm: 2, leader: 1 } },
+                    { text: "引导他自己思考", dimensions: { clarity: 2, teacher: 1 } }
+                ]
+            },
+            {
+                question: "以下哪种生活状态最吸引你？",
+                options: [
+                    { text: "稳定有序，按部就班", dimensions: { firm: 2, calm: 1 } },
+                    { text: "充满变化，每天新鲜", dimensions: { explorer: 2, creative: 1 } },
+                    { text: "温暖热闹，有人陪伴", dimensions: { warm: 2, social: 1 } },
+                    { text: "持续成长，输出价值", dimensions: { teacher: 2, explorer: 1 } }
+                ]
+            },
+            {
+                question: "如果需要公开发言，你会？",
+                options: [
+                    { text: "精心准备，反复练习", dimensions: { firm: 2, teacher: 1 } },
+                    { text: "列好大纲，临场发挥", dimensions: { creative: 2, expressive: 1 } },
+                    { text: "有点紧张但能完成", dimensions: { calm: 1, thinker: 1 } },
+                    { text: "享受分享的过程", dimensions: { social: 2, expressive: 1 } }
+                ]
+            },
+            {
+                question: "你更看重一件事的？",
+                options: [
+                    { text: "结果和实际价值", dimensions: { firm: 2, builder: 1 } },
+                    { text: "过程中的体验感受", dimensions: { warm: 2, creative: 1 } },
+                    { text: "能否帮助到他人", dimensions: { warm: 2, teacher: 1 } },
+                    { text: "有没有新意和创意", dimensions: { creative: 2, explorer: 1 } }
+                ]
+            },
+            {
+                question: "和人意见不合时，你通常会？",
+                options: [
+                    { text: "摆事实讲道理，以理服人", dimensions: { clarity: 2, firm: 1 } },
+                    { text: "不想争执，选择妥协", dimensions: { warm: 1, calm: 1 } },
+                    { text: "试图说服对方认同", dimensions: { expressive: 2, teacher: 1 } },
+                    { text: "求同存异，保留意见", dimensions: { calm: 2, thinker: 1 } }
+                ]
+            },
+            {
+                question: "闲暇时，你更喜欢哪种娱乐？",
+                options: [
+                    { text: "看纪录片、公开课", dimensions: { thinker: 2, teacher: 1 } },
+                    { text: "追剧、刷综艺", dimensions: { social: 1, warm: 1 } },
+                    { text: "做手工、画画等创作", dimensions: { creative: 2, builder: 1 } },
+                    { text: "运动、户外活动", dimensions: { explorer: 2, expressive: 1 } }
+                ]
+            },
+            {
+                question: "你觉得自己最核心的价值是？",
+                options: [
+                    { text: "解决问题的能力", dimensions: { firm: 2, builder: 1 } },
+                    { text: "带给别人温暖", dimensions: { warm: 2, social: 1 } },
+                    { text: "传递知识与观点", dimensions: { teacher: 2, expressive: 1 } },
+                    { text: "创造新的可能性", dimensions: { creative: 2, explorer: 1 } }
+                ]
+            },
+            {
+                question: "面对陌生领域的知识，你会？",
+                options: [
+                    { text: "深入研究，搞懂原理", dimensions: { thinker: 2, builder: 1 } },
+                    { text: "浅尝辄止，了解大概", dimensions: { explorer: 1, creative: 1 } },
+                    { text: "学会后想分享给别人", dimensions: { teacher: 2, warm: 1 } },
+                    { text: "看有没有实用价值", dimensions: { firm: 2, builder: 1 } }
+                ]
+            },
+            {
+                question: "以下哪个比喻最像你？",
+                options: [
+                    { text: "一盏灯，照亮别人", dimensions: { warm: 2, teacher: 1 } },
+                    { text: "一座山，可靠稳重", dimensions: { firm: 2, calm: 1 } },
+                    { text: "一阵风，自由灵动", dimensions: { creative: 2, explorer: 1 } },
+                    { text: "一汪泉，清澈通透", dimensions: { clarity: 2, thinker: 1 } }
+                ]
+            },
+            {
+                question: "如果能拥有一项天赋，你希望是？",
+                options: [
+                    { text: "过目不忘的记忆力", dimensions: { thinker: 2, builder: 1 } },
+                    { text: "魅力十足的表达力", dimensions: { teacher: 2, expressive: 1 } },
+                    { text: "源源不断的创造力", dimensions: { creative: 2, explorer: 1 } },
+                    { text: "洞察人心的共情力", dimensions: { warm: 2, social: 1 } }
+                ]
+            }
+        ];
+
+        // 状态管理
+        let currentQuestion = 0;
+        let scores = {};
+        const loadingTips = [
+            "检测矿石成分与硬度...",
+            "分析石头纹理与结构...",
+            "比对石种数据库...",
+            "鉴定稀有度等级...",
+            "生成专属鉴定报告..."
+        ];
+
+        // 开始测试
+        function startTest() {
+            document.getElementById('homePage').classList.add('hidden');
+            document.getElementById('quizPage').classList.remove('hidden');
+            document.getElementById('quizPage').classList.add('animate-fade-in');
+            currentQuestion = 0;
+            scores = {};
+            showQuestion();
+        }
+
+        // 显示题目
+        function showQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('questionText').textContent = q.question;
+            document.getElementById('currentNum').textContent = currentQuestion + 1;
+            
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressText').textContent = Math.round(progress) + '%';
+
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            q.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-4 rounded-2xl border-2 border-stone-100 bg-white/60 hover:bg-forest-deep/5 option-hover text-stone-700 font-medium';
+                btn.innerHTML = `<span class="inline-block w-8 h-8 rounded-lg bg-stone-100 text-center leading-8 mr-3 text-stone-500 font-serif font-bold">${String.fromCharCode(65 + index)}</span>${option.text}`;
+                btn.onclick = () => selectOption(option);
+                container.appendChild(btn);
+                
+                // 入场动画
+                btn.style.opacity = '0';
+                btn.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    btn.style.transition = 'all 0.4s ease-out';
+                    btn.style.opacity = '1';
+                    btn.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }
+
+        // 选择选项
+        function selectOption(option) {
+            // 维度计分（完整计算流程，最终统一匹配讲解石）
+            for (let dim in option.dimensions) {
+                scores[dim] = (scores[dim] || 0) + option.dimensions[dim];
+            }
+
+            // 下一题或结束
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                // 切换动画
+                const card = document.querySelector('#quizPage .bg-stone-card');
+                card.style.opacity = '0';
+                card.style.transform = 'translateX(-30px)';
+                card.style.transition = 'all 0.3s ease-in';
+                
+                setTimeout(() => {
+                    showQuestion();
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateX(0)';
+                }, 300);
+            } else {
+                showLoading();
+            }
+        }
+
+        // 显示加载
+        function showLoading() {
+            document.getElementById('quizPage').classList.add('hidden');
+            document.getElementById('loadingPage').classList.remove('hidden');
+            document.getElementById('loadingPage').classList.add('animate-fade-in');
+
+            let tipIndex = 0;
+            const tipInterval = setInterval(() => {
+                tipIndex++;
+                if (tipIndex < loadingTips.length) {
+                    document.getElementById('loadingTip').textContent = loadingTips[tipIndex];
+                }
+            }, 550);
+
+            // 模拟计算后显示结果
+            setTimeout(() => {
+                clearInterval(tipInterval);
+                showResult();
+            }, 3000);
+        }
+
+        // 显示结果
+        function showResult() {
+            document.getElementById('loadingPage').classList.add('hidden');
+            document.getElementById('resultPage').classList.remove('hidden');
+            document.getElementById('resultPage').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 重新测试
+        function restartTest() {
+            document.getElementById('resultPage').classList.add('hidden');
+            document.getElementById('homePage').classList.remove('hidden');
+            document.getElementById('homePage').classList.add('animate-fade-in');
+            currentQuestion = 0;
+            scores = {};
+        }
+    </script>
+</body>
+</html>
